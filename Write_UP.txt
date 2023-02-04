@@ -1,0 +1,46 @@
+This project aims to combine four data sets containing immigration data, airport codes, demographics of US cities and global temperature data. The primary purpose of the combination is to create a schema which can be used to derive various correlations, trends and analytics. For example, one could attempt to correlate the influence of the average temperature of a migrant's resident country on their choice of US state, and what the current demographic layout of that state is.
+
+## Datasets:
+I94 Immigration Data: This data comes from the US National Tourism and Trade Office. A data dictionary is included in the workspace. This is where the data comes from. There's a sample file so you can take a look at the data in csv format before reading it all in. You do not have to use the entire dataset, just use what you need to accomplish the goal you set at the beginning of the project.
+World Temperature Data: This dataset came from Kaggle. You can read more about it here.
+U.S. City Demographic Data: This data comes from OpenSoft. You can read more about it here.
+Airport Code Table: This is a simple table of airport codes and corresponding cities. It comes from here.
+
+## Data Model:
+
+![alt_text](./Schema.png.png)    
+For this application, I have developed a Star Schema.
+This Star Schema can be used by Data Analysts and other relevant business professionals to gain deeper insight into various immigration figures, trends and statistics recorded historically.
+
+
+
+#### 3.2 Mapping Out Data Pipelines
+##### List the steps necessary to pipeline the data into the chosen data model:
+
+- 1. Load the data into staging tables
+- 2. Create Dimension tables
+- 3. Create Fact table
+- 4. Write data into parquet files
+- 5. Perform data quality checks
+
+## Project Write Up:
+
+##### 1. Clearly state the rationale for the choice of tools and technologies for the project:
+
+- This project makes use of various Big Data processing technologies including:
+    - Apache Spark, because of its ability to process massive amounts of data as well as the use of its unified analytics engine and convenient APIs
+    - Pandas, due to its convenient dataframe manipulation functions
+    - Matplotlib, to plot data and gain further insights
+    - missingno to asess the data
+
+
+##### 2. Propose how often the data should be updated and why:
+- Data sets are updated monthly, hence all relevant data should be updated monthly as well
+
+##### 3. Write a description of how you would approach the problem differently under the following scenarios:
+##### 3.1 The data was increased by 100x:
+- I would use amazon redshift or EMR.
+##### 3.2 The data populates a dashboard that must be updated on a daily basis by 7am every day:
+- I would use airflow dg
+##### 3.3 The database needed to be accessed by 100+ people:
+I woud use amazon redshift
